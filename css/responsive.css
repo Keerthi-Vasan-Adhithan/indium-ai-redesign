@@ -32,8 +32,60 @@
     padding: 0 1.8rem;
   }
   
+  section {
+    padding: 4.5rem 0;
+  }
+  
   .hero-main-title {
     font-size: 2.8rem;
+  }
+  
+  /* Mobile Menu Dropdown & Toggle styling */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-glass-heavy);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-glass);
+    padding: 2.5rem 2rem;
+    gap: 1.5rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    z-index: 104;
+    list-style: none;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-toggle {
+    display: flex;
+  }
+  
+  .nav-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .nav-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .nav-search-box {
+    display: none;
+  }
+  
+  /* Code editor mobile stacked panes */
+  .editor-window {
+    height: auto;
   }
   
   .editor-body {
@@ -51,12 +103,13 @@
     height: 180px;
   }
   
-  .roi-display-cards {
+  /* Case before/after column stacking */
+  .cs-before-after {
     grid-template-columns: 1fr;
   }
   
-  .nav-menu, .nav-search-box {
-    display: none;
+  .roi-display-cards {
+    grid-template-columns: 1fr;
   }
   
   .footer-copyright-bar {
@@ -67,5 +120,75 @@
   
   .rec-content-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-main-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  /* Stacking hero actions */
+  .hero-action-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .hero-action-buttons .btn-futuristic {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Stacking playground actions */
+  .playground-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+  }
+  
+  .translation-metrics {
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  
+  /* Stacking consultation step navigation */
+  .wizard-navs {
+    flex-direction: column-reverse;
+    gap: 0.8rem;
+  }
+  
+  .wizard-navs .btn-futuristic {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Chatbot mobile alignment */
+  .copilot-launcher-label {
+    display: none !important;
+  }
+  
+  .ai-copilot-launcher-container {
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+  
+  .copilot-panel {
+    width: calc(100vw - 40px);
+    right: 20px;
+    left: 20px;
+    bottom: 90px;
+    height: 480px;
+  }
+  
+  /* Stack Swarm metrics inside Hero Dashboard preview */
+  .metric-cards {
+    grid-template-columns: 1fr !important;
   }
 }
