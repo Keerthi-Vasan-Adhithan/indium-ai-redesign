@@ -1,0 +1,192 @@
+/* Immersive Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 130px;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: var(--accent-purple);
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-tag-glow {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-cyan);
+  animation: pulse-glow 2s infinite alternate;
+}
+
+.hero-main-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+}
+
+.hero-sub-title {
+  font-size: 1.25rem;
+  max-width: 600px;
+}
+
+.hero-action-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Floating HUD layout in Hero Visuals */
+.hero-visuals {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hud-viewport {
+  position: relative;
+  width: 420px;
+  height: 420px;
+}
+
+.hud-mesh {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-indigo-glow) 0%, transparent 60%);
+  filter: blur(15px);
+  animation: pulse-sphere-glow 6s infinite alternate;
+}
+
+.hud-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.hud-ring-1 {
+  width: 380px;
+  height: 380px;
+  border-top-color: var(--accent-cyan);
+  border-bottom-color: var(--accent-purple);
+  animation: spin-clockwise 25s linear infinite;
+}
+
+.hud-ring-2 {
+  width: 440px;
+  height: 440px;
+  border-left-color: var(--accent-orange);
+  border-style: dashed;
+  animation: spin-counter-clockwise 35s linear infinite;
+}
+
+.hud-panel {
+  position: absolute;
+  background: rgba(8, 12, 22, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-glass-bright);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hud-p1 {
+  top: 5%;
+  left: -20px;
+  border-left: 3px solid var(--accent-cyan);
+}
+
+.hud-p2 {
+  bottom: 10%;
+  right: -20px;
+  border-left: 3px solid var(--accent-orange);
+}
+
+.hud-p-val {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.hud-p-lbl {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Dashboard Metric Cards & SVG Wave */
+.hero-dashboard-preview {
+  width: 100%;
+  max-width: 480px;
+}
+
+.metric-cards {
+  display: grid;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--border-glass);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metric-title {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.metric-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.chart-grid-line {
+  stroke: rgba(255, 255, 255, 0.03);
+  stroke-width: 1;
+}

@@ -1,0 +1,71 @@
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .hero-layout, 
+  .playground-grid, 
+  .case-study-grid, 
+  .consultation-grid, 
+  .footer-layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .hero {
+    padding-top: 150px;
+  }
+  
+  .hero-visuals {
+    order: -1;
+  }
+  
+  .hero-main-title {
+    font-size: 3.5rem;
+  }
+  
+  .rec-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.8rem;
+  }
+  
+  .hero-main-title {
+    font-size: 2.8rem;
+  }
+  
+  .editor-body {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  
+  .pane-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border-glass);
+    height: 180px;
+  }
+  
+  .pane-right {
+    height: 180px;
+  }
+  
+  .roi-display-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-menu, .nav-search-box {
+    display: none;
+  }
+  
+  .footer-copyright-bar {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .rec-content-grid {
+    grid-template-columns: 1fr;
+  }
+}

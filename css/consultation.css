@@ -1,0 +1,105 @@
+/* Modern Guided Lead Consultation Flow */
+.consultation-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.consultation-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.consultation-card {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.consultation-wizard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wizard-step-indicator {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.wizard-dot {
+  flex-grow: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  transition: var(--transition-fast);
+}
+
+.wizard-dot.active {
+  background: var(--accent-orange);
+}
+
+.wizard-question {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.wizard-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.wizard-opt-btn {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  padding: 1.1rem 1.4rem;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition-fast);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wizard-opt-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+}
+
+.wizard-opt-btn.active {
+  background: rgba(249, 115, 22, 0.08);
+  border-color: var(--accent-orange);
+  color: #fff;
+}
+
+.wizard-opt-arrow {
+  width: 16px;
+  height: 16px;
+  stroke: var(--text-muted);
+  stroke-width: 2;
+  fill: none;
+  transition: transform 0.3s ease;
+}
+
+.wizard-opt-btn:hover .wizard-opt-arrow {
+  transform: translateX(4px);
+  stroke: var(--accent-orange);
+}
+
+.wizard-navs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}

@@ -1,0 +1,80 @@
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-layout">
+      <div class="hero-info">
+        <div class="hero-tag">
+          <div class="hero-tag-glow"></div>
+          <span>Enterprise Agentic Orchestration</span>
+        </div>
+        <h1 class="hero-main-title">
+          Transform Legacy Systems into <span class="gradient-text">Intelligent Enterprises</span>
+        </h1>
+        <p class="hero-sub-title">
+          Indium is an AI-first engineering partner. We combine autonomous agentic swarms, data modernization frameworks, and automated system archaeology to accelerate digital transformation.
+        </p>
+        <div class="hero-action-buttons">
+          <a href="#playground" class="btn-futuristic btn-orange">
+            <span>Launch The Lifter Demo</span>
+            <svg class="btn-icon" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#roi" class="btn-futuristic btn-glass">
+            <span>Analyze Modernization ROI</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Animated AI Dashboard, Live Metrics and Particle HUD -->
+      <div class="hero-visuals">
+        <div class="glass-panel hero-dashboard-preview">
+          <div class="dashboard-header-bar" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 0.8rem; margin-bottom: 1rem;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div class="brand-dot" style="width: 10px; height: 10px; background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan);"></div>
+              <span style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; tracking-spacing: 1px;">ACTIVE AGENT SWARM METRICS</span>
+            </div>
+            <span class="cs-tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981; font-size: 0.7rem; padding: 0.2rem 0.6rem;">LIVE STATUS</span>
+          </div>
+          
+          <div class="metric-cards" style="grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem;">
+            <div class="metric-card" style="padding: 1rem;">
+              <span class="metric-title" style="font-size: 0.75rem;">Active Swarms</span>
+              <span class="metric-value" style="font-size: 1.4rem; color: var(--accent-orange);" id="hero-swarm-count">16 Swarms</span>
+            </div>
+            <div class="metric-card" style="padding: 1rem;">
+              <span class="metric-title" style="font-size: 0.75rem;">Migration Speedup</span>
+              <span class="metric-value" style="font-size: 1.4rem; color: var(--accent-cyan);">200x Scale</span>
+            </div>
+          </div>
+          
+          <!-- Live Wave/Graph Visual -->
+          <div class="chart-container" style="height: 120px; padding: 0.5rem; margin-bottom: 1rem;">
+            <svg class="chart-svg" viewBox="0 0 400 100" preserveAspectRatio="none">
+              <line class="chart-grid-line" x1="0" y1="25" x2="400" y2="25" />
+              <line class="chart-grid-line" x1="0" y1="50" x2="400" y2="50" />
+              <line class="chart-grid-line" x1="0" y1="75" x2="400" y2="75" />
+              <path class="chart-area" d="M 0 90 L 50 60 L 100 80 L 150 40 L 200 70 L 250 30 L 300 50 L 350 20 L 400 10 L 400 100 L 0 100 Z" style="fill: url(#hero-chart-grad); opacity: 0.1;" />
+              <path class="chart-path" d="M 0 90 L 50 60 L 100 80 L 150 40 L 200 70 L 250 30 L 300 50 L 350 20 L 400 10" stroke="var(--accent-orange)" stroke-width="2" style="stroke-dasharray: 1000; stroke-dashoffset: 0; animation: none;" />
+              <defs>
+                <linearGradient id="hero-chart-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--accent-orange)" />
+                  <stop offset="100%" stop-color="transparent" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          
+          <!-- Simulated log terminal inside Hero Visual -->
+          <div class="dep-visualizer-card" style="padding: 0.8rem; background: rgba(0,0,0,0.3); border-color: rgba(255,255,255,0.03);">
+            <span class="dep-visual-title" style="font-size: 0.7rem; color: var(--text-muted);">ACTIVE LOGS:</span>
+            <div style="font-family: var(--font-code); font-size: 0.7rem; color: #10b981; display: flex; flex-direction: column; gap: 4px;" id="hero-log-feed">
+              <div>[SYSTEM] Swarm-Alpha mapping dependency tree.</div>
+              <div style="color: var(--text-secondary);">[LIFTER] Auto-correcting PICK BASIC array indexing.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

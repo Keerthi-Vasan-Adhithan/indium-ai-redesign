@@ -1,0 +1,57 @@
+<section class="roi-section" id="roi">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">ROI Analyzer</span>
+      <h2 class="section-title">Interactive ROI Dashboard</h2>
+      <p>Interact with our data calculators to estimate time, cost, and efficiency savings when utilizing Indium's digital engineering models.</p>
+    </div>
+
+    <div class="glass-panel case-study-grid">
+      <div class="roi-calculator-panel">
+        <div class="badge" style="background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.2); color: #10b981; margin-bottom: 0.5rem;">
+          <span>Estimated Migration Savings: <strong id="roi-pct-savings">68%</strong></span>
+        </div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Input Your Parameters</h3>
+        <p>Drag the sliders below to adjust your project dimensions and operational scale to calculate estimated savings dynamically.</p>
+        
+        <div class="roi-group">
+          <div class="roi-label-wrap">
+            <span>Legacy Code Base Size (Lines of Code)</span>
+            <span class="roi-val-display" id="roi-code-size-display">250,000 LOC</span>
+          </div>
+          <input type="range" class="roi-slider" id="roi-code-slider" min="50000" max="2000000" step="50000" value="250000">
+        </div>
+
+        <div class="roi-group">
+          <div class="roi-label-wrap">
+            <span>Annual Developer Operations Volume</span>
+            <span class="roi-val-display" id="roi-dev-volume-display">$400,000 / year</span>
+          </div>
+          <input type="range" class="roi-slider" id="roi-volume-slider" min="100000" max="3000000" step="100000" value="400000">
+        </div>
+
+        <div class="roi-display-cards">
+          <div class="roi-card">
+            <span class="roi-card-lbl">Estimated Migration Time Saved</span>
+            <span class="roi-card-val" id="calc-time-saved">9 Months</span>
+          </div>
+          <div class="roi-card">
+            <span class="roi-card-lbl">Net Cost Reductions</span>
+            <span class="roi-card-val" id="calc-cost-saved">$280,000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-study-showcase">
+        <div class="cs-tab-group">
+          <button class="cs-tab-btn active" data-cs="credit">Consumer Credit Migration</button>
+          <button class="cs-tab-btn" data-cs="healthcare">Medicare Delay Reducer</button>
+        </div>
+
+        <div id="case-study-content">
+          <!-- Loaded dynamically in dashboard.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

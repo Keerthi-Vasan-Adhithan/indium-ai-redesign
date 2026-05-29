@@ -1,0 +1,64 @@
+<section class="playground-section" id="playground">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Interactive Sandbox</span>
+      <h2 class="section-title">The Lifter Playground</h2>
+      <p>Visually experience how our agentic parser translates legacy languages (SAS, PICK BASIC, 4GL) into clean, documented Python and Snowflake architectures.</p>
+    </div>
+
+    <div class="glass-panel playground-grid">
+      <div class="playground-info">
+        <h3 style="font-size: 1.8rem;">Code Archaeology In Action</h3>
+        <p>Toggle legacy formats, edit or paste your own code, run the reverse engineering pipeline, and examine translated outputs. Our engine maps abstract variables and extracts business logic automatically.</p>
+        
+        <div class="editor-tabs-group" style="width: fit-content;">
+          <button class="editor-tab-btn active" data-lang="sas">SAS Macro</button>
+          <button class="editor-tab-btn" data-lang="pick">PICK BASIC</button>
+          <button class="editor-tab-btn" data-lang="fortran">Legacy 4GL</button>
+        </div>
+
+        <div class="dependency-visualizer-card">
+          <span class="dep-visual-title">Dependency & Flow Map</span>
+          <div class="dep-visual-canvas-mock" id="dependency-visual-area">
+            <!-- Visualized connection nodes render here in playground.js -->
+          </div>
+        </div>
+
+        <div class="playground-actions">
+          <button class="platform-run-btn" id="run-migration-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Execute AI Lifter Pipeline</span>
+          </button>
+          <div class="translation-metrics">
+            <span>Auto-parsed: <strong id="metric-lines" style="color: var(--accent-cyan);">0 lines</strong></span>
+            <span>Errors corrected: <strong id="metric-fixes" style="color: #10b981;">0</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="playground-interface">
+        <div class="editor-window">
+          <div class="editor-header">
+            <div class="editor-dots">
+              <div class="dot dot-red"></div>
+              <div class="dot dot-yellow"></div>
+              <div class="dot dot-green"></div>
+            </div>
+            <span class="editor-tab-label" id="editor-file-label">sas_migration_module.sas</span>
+            <span class="editor-tab-label" style="color: var(--accent-orange); font-weight: bold;">AI Translator Active</span>
+          </div>
+          <div class="editor-body">
+            <div class="code-pane pane-left" id="editor-input-pane" contenteditable="true" spellcheck="false">
+              <!-- Programmed legacy codes loaded in playground.js -->
+            </div>
+            <div class="code-pane pane-right" id="editor-output-pane">
+              <!-- Translated output loaded in playground.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

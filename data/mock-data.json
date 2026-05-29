@@ -1,0 +1,317 @@
+{
+  "codeTemplates": {
+    "sas": {
+      "fileName": "sas_migration_module.sas",
+      "input": "/* Legacy SAS calculation macro */\n%macro calc_risk(client_id, score);\n  data risk_assessment;\n    set client_database;\n    if client_id = &client_id. then do;\n      raw_multiplier = &score. * 1.45;\n      if raw_multiplier > 80 then risk_status = 'HIGH';\n      else risk_status = 'LOW';\n      output;\n    end;\n  run;\n%mend calc_risk;",
+      "output": "# Automatically translated Python / Pandas / Snowflake output\nimport pandas as pd\n\ndef assess_risk(client_db_df: pd.DataFrame, client_id: int, score: float) -> pd.DataFrame:\n    # Set risk criteria matching legacy algorithm\n    raw_multiplier = score * 1.45\n    status = 'HIGH' if raw_multiplier > 80 else 'LOW'\n    \n    # Filter and update target structure\n    risk_assessment = client_db_df[client_db_df['client_id'] == client_id].copy()\n    risk_assessment['raw_multiplier'] = raw_multiplier\n    risk_assessment['risk_status'] = status\n    \n    return risk_assessment"
+    },
+    "pick": {
+      "fileName": "inventory_ledger.pick",
+      "input": "* Legacy PICK BASIC Universe code\n001 SUBROUTINE INV_CALC(ITEM.ID, PRICE, QTY, TOTAL)\n002 FILE = 'WAREHOUSE_STOCK'\n003 OPEN FILE TO F.STOCK ELSE ABORT\n004 READ RECORD FROM F.STOCK, ITEM.ID ELSE RECORD = ''\n005 IF RECORD<4> > QTY THEN\n006   TOTAL = RECORD<5> * QTY\n007   RECORD<4> = RECORD<4> - QTY\n008   WRITE RECORD TO F.STOCK, ITEM.ID\n009 END ELSE\n010   TOTAL = 0\n011 END\n012 RETURN",
+      "output": "# Automatically translated Python / SQLAlchemy modern class\nfrom sqlalchemy import create_engine, Table, MetaData\n\ndef update_inventory_stock(session, item_id: str, qty: int):\n    # Fetch stock record matching legacy attributes\n    stock = session.query(WarehouseStock).filter_by(item_id=item_id).first()\n    \n    if stock and stock.quantity > qty:\n        total_cost = stock.unit_price * qty\n        stock.quantity -= qty\n        session.commit()\n        return {\"status\": \"SUCCESS\", \"total_price\": total_cost}\n    else:\n        return {\"status\": \"INSUFFICIENT_STOCK\", \"total_price\": 0.0}"
+    },
+    "fortran": {
+      "fileName": "claims_proc.fortran",
+      "input": "C      LEGACY FORTRAN CLAIMS AUDITING SCHEMAS\n       SUBROUTINE AUDIT_CLAIM(CLAIM_AMT, AGE, AUDIT_FLAG)\n       DOUBLE PRECISION CLAIM_AMT\n       INTEGER AGE\n       INTEGER AUDIT_FLAG\n       IF (CLAIM_AMT .GT. 10000.0) THEN\n          AUDIT_FLAG = 1\n       ELSE IF (AGE .GT. 65 .AND. CLAIM_AMT .GT. 5000.0) THEN\n          AUDIT_FLAG = 1\n       ELSE\n          AUDIT_FLAG = 0\n       ENDIF\n       RETURN\n       END",
+      "output": "# Automatically translated PySpark DataFrame logic\nfrom pyspark.sql import functions as F\n\ndef audit_claims_dataframe(claims_df):\n    # Map complex conditional filters using modern PySpark functions\n    return claims_df.withColumn(\n        \"audit_flag\",\n        F.when(F.col(\"claim_amt\") > 10000.0, 1)\n         .when((F.col(\"age\") > 65) & (F.col(\"claim_amt\") > 5000.0), 1)\n         .otherwise(0)\n    )"
+    }
+  },
+  "caseStudiesData": {
+    "credit": {
+      "tag": "FINTECH MODERNIZATION",
+      "title": "Automated 70% of 2,500 SAS Modules",
+      "desc": "A major US credit firm needed to migrate legacy risk forecasting calculations off SAS. Using The Lifter platform, we parsed and verified code structures, migrating calculations safely to Snowflake.",
+      "before": "2,500 undocumented legacy SAS calculations running on expensive local databases.",
+      "after": "Clean Python codebases running optimized Snowflake SQL queries.",
+      "roi": "70% automated code migration, completed 8 months ahead of timeline."
+    },
+    "healthcare": {
+      "tag": "HEALTHCARE COMPLIANCE",
+      "title": "Medicare claims intake reduced delays by 70%",
+      "desc": "A national health insurance provider struggled with handwritten form digitization and record matching. Our Agentic NLP pipeline extracted key claim data and synced records securely.",
+      "before": "Manual entry queues taking 12 days to verify claimant details.",
+      "after": "AI pipelines analyzing claims instantly with 98% accuracy.",
+      "roi": "70% claims backlog reduction, processing times compressed from days to hours."
+    }
+  },
+  "wizardSteps": [
+    {
+      "question": "Select your primary engineering goal:",
+      "options": [
+        { "text": "Modernize Legacy Architectures (SAS/4GL)", "value": "modernize" },
+        { "text": "Build High-Performance Data Pipelines", "value": "data" },
+        { "text": "Configure Autonomous AI Agent Swarms", "value": "agents" },
+        { "text": "Implement Automated QA Testing Systems", "value": "qa" }
+      ]
+    },
+    {
+      "question": "Select your industry vertical:",
+      "options": [
+        { "text": "BFSI & Investment Intelligence", "value": "bfsi" },
+        { "text": "Healthcare & Payer Portals", "value": "healthcare" },
+        { "text": "Retail & Supply Chain Logistics", "value": "retail" },
+        { "text": "Gaming & Interactive Tech", "value": "gaming" }
+      ]
+    },
+    {
+      "question": "Submit details to receive your blueprint roadmap:",
+      "isForm": true
+    }
+  ],
+  "copilotKnowledge": {
+    "greetings": [
+      "Hello! I am Indium's enterprise AI coordinator. Ask me about **The Lifter**, SAS migrations, or our iXie Gaming QA models.",
+      "Greetings! Ready to assess your digital architectures. What legacy modules or AI integrations are you working on?"
+    ],
+    "lifter": [
+      "<strong>The Lifter</strong> uses autonomous parser agents to read legacy codebases (like SAS, Fortran, PICK BASIC) and rewrite them to Python and Snowflake with 70% automation accuracy. Try it out in the sandbox section!"
+    ],
+    "medicare": [
+      "In our healthcare practice, we automated claims intake by building an NLP translation system. It resolved Medicare delays by 70% while verifying handwritten structures with 98% accuracy."
+    ],
+    "gaming": [
+      "Our gaming division, <strong>iXie Gaming</strong>, delivers advanced game development, automated art checking, and specialized QA testing models to game studios worldwide."
+    ],
+    "default": [
+      "Interesting challenge. Indium offers specialized data engineering (Databricks / Striim), Low-code platforms, and custom Agentic AI swarms. What specific integration details are you interested in?"
+    ]
+  },
+  "recommendationDB": {
+    "bfsi": {
+      "name": "BFSI & Fintech",
+      "tech-debt": {
+        "title": "Core Banking Modernization & Compliance Engine",
+        "savings": "68% savings",
+        "services": [
+          { "title": "SAS-to-Python Migration", "desc": "Automated parsing and translation of risk engines and compliance loops." },
+          { "title": "Legacy Code Archaeology", "desc": "Identify dead variables, hidden formulas, and structural loops in old mainframes." }
+        ],
+        "lifter": "The Lifter maps PICK BASIC databases and COBOL procedures directly into clean SQLAlchemy models and Spark routines.",
+        "case": {
+          "title": "Consumer Credit Firm Legacy Modernization",
+          "metrics": [{ "val": "70%", "lbl": "Code Auto-Migrated" }, { "val": "8 Mos", "lbl": "Ahead of Schedule" }]
+        },
+        "topology": ["Legacy Mainframe / SAS", "The Lifter Code Parser", "Spring Boot / AWS EKS", "Snowflake DW"]
+      },
+      "automation": {
+        "title": "Transaction Integrity & Automated QA Swarms",
+        "savings": "80% efficiency",
+        "services": [
+          { "title": "Regression Testing Swarms", "desc": "AI agents spin up to run end-to-end ledger validation and payment flows." },
+          { "title": "Synthetic Ledger Seeders", "desc": "Generate synthetic credit profiles to validate database transactions under stress." }
+        ],
+        "lifter": "The Lifter auto-generates test specifications by analyzing inputs/outputs of legacy modules.",
+        "case": {
+          "title": "Fintech Platform QA Automation",
+          "metrics": [{ "val": "80%", "lbl": "QA Time Saved" }, { "val": "99.9%", "lbl": "Regression Accuracy" }]
+        },
+        "topology": ["Legacy Test Scripts", "Agentic Test swarms", "API Gateway", "Ledger Validation"]
+      },
+      "data-engineering": {
+        "title": "Real-time Auditing & High-Throughput Streams",
+        "savings": "5x speedup",
+        "services": [
+          { "title": "Real-time Fraud Streaming", "desc": "Deploy Striim pipelines to audit ledger transactions with sub-millisecond latencies." },
+          { "title": "Data Mesh Integration", "desc": "Decentralize transaction datasets into secure, domain-owned data products." }
+        ],
+        "lifter": "The Lifter translates old ETL batch scripts to structured Spark streams.",
+        "case": {
+          "title": "Investment Bank Real-Time Ledger",
+          "metrics": [{ "val": "$12M", "lbl": "Annual Operations Savings" }, { "val": "5x", "lbl": "Data Throughput Boost" }]
+        },
+        "topology": ["Striim Ingestion", "Databricks Delta Lake", "Spark Streaming", "Snowflake DW"]
+      },
+      "ai-agent": {
+        "title": "Agentic Underwriting & Autonomous Advisory",
+        "savings": "92% speedup",
+        "services": [
+          { "title": "Underwriting Agent Swarms", "desc": "LLM agents analyze applicant profiles, tax records, and risk models." },
+          { "title": "Conversational Wealth Advisors", "desc": "Secure RAG engines advising customers based on live market feeds." }
+        ],
+        "lifter": "The Lifter extracts banking business rules and feeds them directly into prompt templates.",
+        "case": {
+          "title": "Automated Lending Swarm Deployment",
+          "metrics": [{ "val": "92%", "lbl": "Accuracy" }, { "val": "10x", "lbl": "Process Compression" }]
+        },
+        "topology": ["Applicant profiles", "LangGraph Agent Swarm", "Vector DB (RAG)", "Banking Core APIs"]
+      }
+    },
+    "healthcare": {
+      "name": "Healthcare & Life Sciences",
+      "tech-debt": {
+        "title": "Payer System Modernization & Prior Auth Engine",
+        "savings": "70% speedup",
+        "services": [
+          { "title": "Prior Authorization Parsing", "desc": "Automate form scanning and map policy rules into active digital engines." },
+          { "title": "Legacy FHIR Integrations", "desc": "Wrap old record archives in compliant FHIR-ready REST APIs." }
+        ],
+        "lifter": "The Lifter translates proprietary health insurance claims code to clean Java microservices.",
+        "case": {
+          "title": "National Payer Claims Modernization",
+          "metrics": [{ "val": "70%", "lbl": "Prior Auth Speedup" }, { "val": "98%", "lbl": "Extraction Accuracy" }]
+        },
+        "topology": ["Claims Intake Files", "The Lifter Parser", "FHIR API Gateway", "Secure HIPAA Cloud"]
+      },
+      "automation": {
+        "title": "Intake Automation & Claims Verification QA",
+        "savings": "70% delays cut",
+        "services": [
+          { "title": "Medicare Verification Swarms", "desc": "Agentic swarms reconcile patient files and intake sheets automatically." },
+          { "title": "HL7 Data Pipeline Testing", "desc": "Continuous integration testing of HL7 data pipelines for zero data loss." }
+        ],
+        "lifter": "The Lifter maps clinical rules in legacy systems to automated QA assertions.",
+        "case": {
+          "title": "Medicare Intake Queue Automation",
+          "metrics": [{ "val": "70%", "lbl": "Queue Delay Reduction" }, { "val": "Zero", "lbl": "Compliance Escapes" }]
+        },
+        "topology": ["Patient Intake", "Reconciliation Swarms", "HL7 Message Router", "FHIR Records DB"]
+      },
+      "data-engineering": {
+        "title": "HIPAA Clinical Data Lakehouses",
+        "savings": "5x throughput",
+        "services": [
+          { "title": "Clinical Record Lakehouse", "desc": "Consolidate EHR data streams, lab reports, and billing data into Databricks." },
+          { "title": "Patient Journey Pipelines", "desc": "Build pipelines mapping patient journeys across multiple clinical touchpoints." }
+        ],
+        "lifter": "The Lifter converts legacy healthcare ETL routines to Spark SQL query chains.",
+        "case": {
+          "title": "Fortune 100 Clinical Data Platform",
+          "metrics": [{ "val": "5x", lbl: "Throughput Boost" }, { "val": "94%", "lbl: "Diagnostic Accuracy" }]
+        },
+        "topology": ["EHR Data Streams", "Databricks Lakehouse", "Patient Journey ETL", "Snowflake DW"]
+      },
+      "ai-agent": {
+        "title": "Clinical Co-Pilot & Patient Triage Swarms",
+        "savings": "85% triage savings",
+        "services": [
+          { "title": "Diagnostic Assistant Co-Pilot", "desc": "AI queries past EHR history, literature databases, and recommends steps." },
+          { "title": "Automated Patient Outreach", "desc": "Autonomous agents message patients to track recovery and book follow-ups." }
+        ],
+        "lifter": "The Lifter extracts diagnostic rules from legacy logic to prime clinical AI agents.",
+        "case": {
+          "title": "Patient Triage Assistant Deployment",
+          "metrics": [{ "val": "85%", "lbl": "Triage Time Saved" }, { "val: "99.4%", "lbl": "HIPAA Compliance" }]
+        },
+        "topology": ["Clinical Data Lake", "Triage Agent Swarms", "Patient Care Portal", "EHR Sync Node"]
+      }
+    },
+    "retail": {
+      "name": "Retail & Supply Chain",
+      "tech-debt": {
+        "title": "ERP & Inventory Modernization",
+        "savings": "65% saved",
+        "services": [
+          { "title": "Legacy ERP Code translation", "desc": "Convert custom, legacy warehouse code into modern microservices." },
+          { "title": "WMS Architecture Redesign", "desc": "Rewrite monolithic batch systems to Event-Driven Cloud Functions." }
+        ],
+        "lifter": "The Lifter maps old inventory database rules to automated REST endpoints.",
+        "case": {
+          "title": "Omnichannel Retailer WMS Migration",
+          "metrics": [{ "val": "65%", "lbl": "WMS Dev Time Saved" }, { "val": "20x", "lbl": "Scaling Speedup" }]
+        },
+        "topology": ["Legacy ERP / WMS", "The Lifter Parser", "AWS Lambda / Node.js", "DynamoDB Stock"]
+      },
+      "automation": {
+        "title": "QA Test Automation & Fulfillment Testing",
+        "savings": "10x test coverage",
+        "services": [
+          { "title": "Cart-to-Fulfillment Testing", "desc": "Validate transaction flows, loyalty calculations, and delivery schedules." },
+          { "title": "Autonomous UI Checks", "desc": "AI agents test web, mobile, and kiosk ordering screens for visual bugs." }
+        ],
+        "lifter": "The Lifter automatically designs mock transaction inputs by inspecting legacy systems.",
+        "case": {
+          "title": "E-Commerce QA Automation",
+          "metrics": [{ "val": "10x", "lbl": "Test Coverage Expansion" }, { "val": "90%", "lbl": "Defect Escape Reduction" }]
+        },
+        "topology": ["Cart / Checkout UI", "Autonomous Visual QA", "Order processing API", "Fulfillment Sync"]
+      },
+      "data-engineering": {
+        "title": "Omnichannel CDPs & Real-time Stock Analytics",
+        "savings": "$4.5M waste cut",
+        "services": [
+          { "title": "Customer Data Platforms (CDP)", "desc": "Unify offline POS, online cart, and email metrics into a 360 profile." },
+          { "title": "Predictive Stock Pipelines", "desc": "Build supply chain pipelines predicting warehouse replenishment rates." }
+        ],
+        "lifter": "The Lifter transforms database-specific SQL procedures into cloud-independent Spark pipelines.",
+        "case": {
+          "title": "Retail Demand Forecasting platform",
+          "metrics": [{ "val": "$4.5M", "lbl": "Inventory Cost Saved" }, { "val": "32%", "lbl": "Conversion Rate Boost" }]
+        },
+        "topology": ["POS & Web Events", "CDP Processing Engine", "Demand Forecasting Model", "Inventory Database"]
+      },
+      "ai-agent": {
+        "title": "Agentic Shopping Assistants & Logistics Swarms",
+        "savings": "2.8x LTV lift",
+        "services": [
+          { "title": "Intelligent Concierge Agents", "desc": "LLM agents suggest products, resolve complaints, and track deliveries." },
+          { "title": "Autonomous Dispatch Swarms", "desc": "Agents schedule delivery vans and route shipments based on weather." }
+        ],
+        "lifter": "The Lifter reverse-engineers legacy routing algorithms to bootstrap AI routing swarms.",
+        "case": {
+          "title": "Omnichannel Concierge Deployment",
+          "metrics": [{ "val": "2.8x", "lbl": "Customer LTV Uplift" }, { "val": "88%", "lbl": "First-contact Resolution" }]
+        },
+        "topology": ["Inventory & User logs", "Shopping Swarm Agents", "Logistics API Router", "Delivery Dispatch"]
+      }
+    },
+    "gaming": {
+      "name": "Gaming & ISVs",
+      "tech-debt": {
+        "title": "Legacy Engine Modernization & SDK Upgrades",
+        "savings": "55% cost saved",
+        "services": [
+          { "title": "Engine Script Translation", "desc": "Migrate old game engine scripts and tools to modern C++ / C# routines." },
+          { "title": "Monetization API Wrapping", "desc": "Wrap legacy payment SDKs into secure microservice structures." }
+        ],
+        "lifter": "The Lifter compiles deprecated game server scripts to high-performance Go/Rust engines.",
+        "case": {
+          "title": "AAA Studio Server Migration",
+          "metrics": [{ "val": "55%", "lbl": "Dev Cost Reduced" }, { "val": "Zero", "lbl": "In-game Lag Crashes" }]
+        },
+        "topology": ["Legacy Server Scripts", "The Lifter Engine", "Go Game Server", "Kubernetes Fleet"]
+      },
+      "automation": {
+        "title": "iXie Gaming AI-Led Quality Assurance",
+        "savings": "80% QA time saved",
+        "services": [
+          { "title": "Autonomous Bug Finding Swarms", "desc": "AI bots navigate game levels to detect collision bugs, leaks, and lag." },
+          { "title": "Smart Art Assets Verification", "desc": "Computer vision checks texture resolutions, UI alignments, and models." }
+        ],
+        "lifter": "The Lifter generates test coverage strategies by scanning asset manifests.",
+        "case": {
+          "title": "AAA Title AI-Led Quality Assurance",
+          "metrics": [{ "val": "80%", "lbl": "QA Cycle Compression" }, { "val": "Zero", "lbl": "P0 Bugs at Release" }]
+        },
+        "topology": ["AAA Game Engine", "iXie Vision AI bots", "Asset Scan Pipeline", "CI/CD Test Dashboard"]
+      },
+      "data-engineering": {
+        "title": "Real-time Player Analytics & Monetization Streams",
+        "savings": "10x processing",
+        "services": [
+          { "title": "Telemetry Stream Ingestion", "desc": "Ingest billions of in-game player telemetry events with Databricks." },
+          { "title": "Dynamic Pricing Engines", "desc": "ML pipelines calculating virtual economy pricing variables on the fly." }
+        ],
+        "lifter": "The Lifter converts custom flat-file binary parsers to structured streaming schemas.",
+        "case": {
+          "title": "MMO Player Telemetry Architecture",
+          "metrics": [{ "val": "10x", "lbl": "Telemetry Throughput" }, { "val": "22%", "lbl": "LTV Retention Increase" }]
+        },
+        "topology": ["Telemetry Streams", "Kafka Broker Cluster", "Databricks Telemetry DW", "Pricing Engine Model"]
+      },
+      "ai-agent": {
+        "title": "NPC Behavior Engines & Anti-Cheat Swarms",
+        "savings": "99.8% cheat detection",
+        "services": [
+          { "title": "LLM-Powered NPC dialogs", "desc": "Generative dialogue agents responding to players with persistent memory." },
+          { "title": "Agentic Anti-Cheat Scanning", "desc": "AI bots monitoring packet streams to isolate bots, aim-hacks, and wallhacks." }
+        ],
+        "lifter": "The Lifter reverse-engineers legacy game rules to compile rule engines for anti-cheat verification.",
+        "case": {
+          "title": "FPS Multiplayer Anti-Cheat Launch",
+          "metrics": [{ "val": "99.8%", "lbl": "Cheater Isolation Rate" }, { "val": "Zero", "lbl": "False Positives" }]
+        },
+        "topology": ["Game packet stream", "Anti-Cheat Agent Swarm", "Moderator Alert Desk", "Server Ban Node"]
+      }
+    }
+  }
+}

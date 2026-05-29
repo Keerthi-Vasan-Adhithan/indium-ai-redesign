@@ -1,0 +1,39 @@
+<section class="recommendations-section" id="recommender">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Tailored Roadmap</span>
+      <h2 class="section-title">Personalized AI Solutions</h2>
+      <p>Select your industry and primary technology challenge below to view recommended Indium framework solutions and estimated performance gains.</p>
+    </div>
+
+    <div class="rec-grid">
+      <div class="glass-card rec-selector-card">
+        <div class="selector-group">
+          <span class="selector-label">1. Choose Your Industry</span>
+          <div class="option-buttons" id="industry-selector">
+            <button class="option-btn active" data-value="bfsi">BFSI & Fintech</button>
+            <button class="option-btn" data-value="healthcare">Healthcare</button>
+            <button class="option-btn" data-value="retail">Retail & Logistics</button>
+            <button class="option-btn" data-value="gaming">Gaming & ISVs</button>
+          </div>
+        </div>
+        
+        <div class="selector-group">
+          <span class="selector-label">2. Choose Your Primary Tech Challenge</span>
+          <div class="option-buttons" id="challenge-selector">
+            <button class="option-btn active" data-value="tech-debt">Legacy Tech Debt</button>
+            <button class="option-btn" data-value="automation">QA & Automation</button>
+            <button class="option-btn" data-value="data-engineering">Data Pipelines</button>
+            <button class="option-btn" data-value="ai-agent">Agentic AI integration</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rec-results-pane">
+        <div id="recommendation-output">
+          <!-- Loaded dynamically in recommender.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
