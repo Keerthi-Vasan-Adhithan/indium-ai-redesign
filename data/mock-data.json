@@ -176,7 +176,7 @@
         "lifter": "The Lifter converts legacy healthcare ETL routines to Spark SQL query chains.",
         "case": {
           "title": "Fortune 100 Clinical Data Platform",
-          "metrics": [{ "val": "5x", lbl: "Throughput Boost" }, { "val": "94%", "lbl: "Diagnostic Accuracy" }]
+          "metrics": [{ "val": "5x", "lbl": "Throughput Boost" }, { "val": "94%", "lbl": "Diagnostic Accuracy" }]
         },
         "topology": ["EHR Data Streams", "Databricks Lakehouse", "Patient Journey ETL", "Snowflake DW"]
       },
@@ -190,7 +190,7 @@
         "lifter": "The Lifter extracts diagnostic rules from legacy logic to prime clinical AI agents.",
         "case": {
           "title": "Patient Triage Assistant Deployment",
-          "metrics": [{ "val": "85%", "lbl": "Triage Time Saved" }, { "val: "99.4%", "lbl": "HIPAA Compliance" }]
+          "metrics": [{ "val": "85%", "lbl": "Triage Time Saved" }, { "val": "99.4%", "lbl": "HIPAA Compliance" }]
         },
         "topology": ["Clinical Data Lake", "Triage Agent Swarms", "Patient Care Portal", "EHR Sync Node"]
       }
