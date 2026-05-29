@@ -1,18 +1,20 @@
 /* Modern Guided Lead Consultation Flow */
 .consultation-grid {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 5rem;
   align-items: center;
 }
 
 .consultation-info {
+  flex: 1 1 450px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .consultation-card {
+  flex: 1 1 500px;
   min-height: 400px;
   display: flex;
   flex-direction: column;

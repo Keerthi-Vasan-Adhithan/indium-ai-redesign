@@ -2,8 +2,6 @@
 @media (max-width: 1024px) {
   .hero-layout, 
   .playground-grid, 
-  .case-study-grid, 
-  .consultation-grid, 
   .footer-layout {
     grid-template-columns: 1fr;
     gap: 4rem;
@@ -19,11 +17,6 @@
   
   .hero-main-title {
     font-size: 3.5rem;
-  }
-  
-  .rec-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
   }
 }
 

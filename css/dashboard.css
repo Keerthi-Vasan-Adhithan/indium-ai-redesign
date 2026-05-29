@@ -5,16 +5,24 @@
 }
 
 .case-study-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 4rem;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .roi-calculator-panel {
+  flex: 1 1 500px;
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
+}
+
+.case-study-showcase {
+  flex: 1 1 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .roi-group {
@@ -92,11 +100,7 @@
   text-shadow: 0 0 15px var(--accent-orange-glow);
 }
 
-.case-study-showcase {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+
 
 .cs-tab-group {
   display: flex;

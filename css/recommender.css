@@ -5,10 +5,14 @@
 }
 
 .rec-grid {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
-  align-items: start;
+  align-items: flex-start;
+}
+
+.rec-selector-card {
+  flex: 1 1 450px;
 }
 
 .glass-card {
@@ -83,6 +87,7 @@
 }
 
 .rec-results-pane {
+  flex: 1 1 500px;
   min-height: 500px;
 }
 
