@@ -1,0 +1,39 @@
+<section class="slide-section">
+  <div class="slide-container">
+    <div class="slide-head">
+      <span class="slide-tag">SECTION 07: GAP ANALYSIS</span>
+      <h2 class="slide-title gradient-text-indigo">Strategic Gap Analysis</h2>
+      <p class="slide-subtitle">Highlighting critical design, layout, and capability gaps that separate website reality from marketing objectives.</p>
+    </div>
+    
+    <div class="gap-matrix-grid">
+      <div class="gap-cards-container">
+        <!-- Dynamically loaded from analysis-data.json -->
+      </div>
+      
+      <div class="gap-impact-card" style="display: flex; flex-direction: column; gap: 1.8rem; justify-content: center; background: var(--bg-glass-heavy);">
+        <h3 id="gap-selection-title" style="font-family: var(--font-display); font-size: 0.95rem; color: var(--accent-orange); letter-spacing: 1px; text-transform: uppercase;">GAP ANALYSIS BRIEF</h3>
+        
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); display: block; margin-bottom: 6px;">Business Impact Priority</span>
+          <span id="gap-detail-impact" style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; text-shadow: 0 0 10px rgba(255,255,255,0.05);">Select a gap</span>
+        </div>
+        
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); display: block; margin-bottom: 6px;">Strategic Remediation Action</span>
+          <p id="gap-detail-action" style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">Click any gap item on the left to show the strategic consulting recommendation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Glowing impact levels */
+.val-glow {
+  text-shadow: 0 0 10px currentColor;
+}
+.val-glow.critical { color: #ef4444; }
+.val-glow.high { color: var(--accent-orange); }
+.val-glow.medium { color: var(--accent-indigo); }
+</style>

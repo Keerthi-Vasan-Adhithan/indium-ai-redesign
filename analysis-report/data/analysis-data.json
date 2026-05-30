@@ -1,0 +1,153 @@
+{
+  "heroData": {
+    "title": "Indium Software Digital Experience Assessment",
+    "subtitle": "Comprehensive Analysis of Business Positioning, User Experience, AI Maturity, Competitive Landscape, and AI-First Transformation Opportunities",
+    "date": "May 30, 2026",
+    "analyst": "Corporate Experience & AI Strategy Consultant",
+    "stats": [
+      { "lbl": "Pages Reviewed", "val": "18 Pages" },
+      { "lbl": "Services Audited", "val": "14 Services" },
+      { "lbl": "Industries Analyzed", "val": "6 Industries" },
+      { "lbl": "Competitors Benchmarked", "val": "5 Leaders" }
+    ]
+  },
+  "companyData": {
+    "services": [
+      { "title": "Generative AI", "desc": "Agentic swarms, LLM engineering, Retrieval-Augmented Generation (RAG), and fine-tuning." },
+      { "title": "Data & Analytics", "desc": "Databricks integrations, Striim stream setups, cloud warehouses, and demand predictions." },
+      { "title": "Application Engineering", "desc": "Microservices architectures, serverless backends, and full-cloud migrations." },
+      { "title": "Quality Engineering", "desc": "AI-driven test automation suites, performance runs, and visual collision analysis." },
+      { "title": "Product Engineering", "desc": "Custom software builds, SDK packaging, and product lifecycle optimizations." }
+    ],
+    "industries": [
+      { "name": "BFSI", "desc": "Underwriting models, real-time auditing, fraud monitoring, and compliance loops." },
+      { "name": "Healthcare", "desc": "EHR streams, Prior Auth automation, HIPAA Clinical Lakes, and patient care triage." },
+      { "name": "Retail", "desc": "Inventory predictors, cart-to-fulfillment QA, CDPs, and smart shopping agents." },
+      { "name": "Gaming", "desc": "iXie QA swarms, telemetry analytics, behaviour engines, and SDK integrations." },
+      { "name": "Technology & ISVs", "desc": "SaaS scaling, serverless deployment, API wrapping, and legacy codebase lifts." },
+      { "name": "Manufacturing", "desc": "Supply intelligence, automated scheduling, sensor logs, and visual defect audits." }
+    ],
+    "differentiators": [
+      { "title": "The Lifter Platform", "desc": "Proprietary autonomous compiler translating legacy SAS, Fortran, and COBOL to modern Python and SQL with 70% efficiency." },
+      { "title": "Agentic AI Orchestration", "desc": "Autonomous swarm agents cooperating across complex task chains with state persistence and automated rollback options." },
+      { "title": "Archaeology before Architecture", "desc": "Detailed code archaeology parsing old system structures before building new modern cloud pipelines, eliminating structural tech debt." }
+    ]
+  },
+  "homepageData": {
+    "scores": [
+      { "cat": "Design Aesthetics", "score": "78%", "class": "good" },
+      { "cat": "Value Messaging", "score": "80%", "class": "good" },
+      { "cat": "Navigation Usability", "score": "60%", "class": "fair" },
+      { "cat": "Conversion Readiness", "score": "55%", "class": "poor" },
+      { "cat": "Interactive Experience", "score": "30%", "class": "critical" }
+    ],
+    "strengths": [
+      { "title": "Professional Styling", "desc": "Modern dark aesthetic, matching high-tech SaaS conventions." },
+      { "title": "Clear Positioning", "desc": "Identifies clearly as an AI-first digital engineering and modernization partner." },
+      { "title": "Strong Visual Structure", "desc": "Segmented services, client badges, and recent thought logs." }
+    ],
+    "weaknesses": [
+      { "title": "Static Content Only", "desc": "Heavy reliance on text descriptions. No interactive tool demonstrations." },
+      { "title": "Generic Calls-to-Action", "desc": "All sections funnel to standard contact form inputs or static PDF briefs." },
+      { "title": "Zero Proof-of-Capability", "desc": "No playgrounds showing AI engines (such as The Lifter) active in real-time." }
+    ]
+  },
+  "uxData": {
+    "painPoints": [
+      { "title": "Heavy Megamenus", "desc": "Massive nested link structures in the header cause menu overload and hover fatigue." },
+      { "title": "Absence of Search", "desc": "No global search capability, forcing users to click through multiple service structures." },
+      { "title": "Friction-Heavy Conversion", "desc": "Lead capture forms are static, asking for many fields upfront with zero value exchange." },
+      { "title": "Deep Scrolling Paths", "desc": "Case study details and solution specifications are buried inside static PDF downloads." }
+    ],
+    "scores": [
+      { "metric": "Layout Clarity", "score": 8.0 },
+      { "metric": "Mobile Consistency", "score": 6.5 },
+      { "metric": "Information IA", "score": 5.8 },
+      { "metric": "Search & Findability", "score": 2.0 },
+      { "metric": "Interactive Engagement", "score": 1.5 }
+    ]
+  },
+  "contentData": {
+    "reviewedPages": [
+      { "page": "Homepage", "type": "Hub", "density": "Medium", "engagement": "Low" },
+      { "page": "About Us", "type": "Corporate", "density": "High", "engagement": "Low" },
+      { "page": "The Lifter Platform", "type": "Solutions", "density": "High", "engagement": "Medium" },
+      { "page": "Agentic AI Services", "type": "Services", "density": "Medium", "engagement": "Low" },
+      { "page": "BFSI Vertical", "type": "Industry", "density": "High", "engagement": "Low" },
+      { "page": "Careers", "type": "Operational", "density": "Medium", "engagement": "Medium" }
+    ],
+    "findings": {
+      "strengths": "Rich text resources, detailed explanations of service steps, and strong executive summaries.",
+      "weaknesses": "Heavy text density, pdf-dependent case records, lack of live telemetry dashboards, and low micro-interaction metrics."
+    }
+  },
+  "aiMaturity": {
+    "overview": {
+      "gapTitle": "AI Branding vs. AI Experience Gap",
+      "desc": "Indium Software positions itself as a premier developer of Agentic AI and legacy translators, but the website experience remains static, utilizing traditional forms, text blocks, and PDF downloads."
+    },
+    "scorecard": [
+      { "category": "AI Search", "score": 15, "state": "Missing Opportunities" },
+      { "category": "AI Personalization", "score": 10, "state": "No dynamic elements" },
+      { "category": "AI Assistant", "score": 20, "state": "Static contact forms only" },
+      { "category": "AI Recommendations", "score": 25, "state": "Static solutions menu" },
+      { "category": "Interactive Demos", "score": 10, "state": "No playground access" },
+      { "category": "AI-powered Lead Capture", "score": 18, "state": "Standard text inputs" }
+    ]
+  },
+  "competitorData": {
+    "companies": [
+      { "name": "Indium", "position": "AI & Modernization Specialist", "ux": "Fair / Static", "interactivity": "Low", "diff": "High (The Lifter, swarms)", "score": 62 },
+      { "name": "Persistent", "position": "Digital Engineering Partner", "ux": "Good", "interactivity": "Medium", "diff": "Medium (Cloud frameworks)", "score": 75 },
+      { "name": "TCS", "position": "Global IT Conglomerate", "ux": "Fair", "interactivity": "Low", "diff": "Low (Generic scales)", "score": 58 },
+      { "name": "Infosys", "position": "Systems & Cloud Integrator", "ux": "Good", "interactivity": "Low", "diff": "Medium (Automation engines)", "score": 68 },
+      { "name": "Accenture", "position": "Enterprise Strategy Leader", "ux": "Excellent", "interactivity": "Medium", "diff": "High (AI research portal)", "score": 82 },
+      { "name": "Cognizant", "position": "Industrial Digital Partner", "ux": "Good", "interactivity": "Low", "diff": "Medium (Legacy pipelines)", "score": 70 }
+    ]
+  },
+  "gapData": {
+    "gaps": [
+      { "num": 1, "title": "AI Branding vs. AI Reality", "desc": "Marketing positions Indium as an AI pioneer, but the website has zero conversational components or interactive layouts.", "impact": "High", "action": "Introduce floating AI Copilots to guide user inquiries." },
+      { "num": 2, "title": "Static Solution Funnel", "desc": "Users read generic service grids and must contact sales to understand matches.", "impact": "High", "action": "Deploy Interactive Solutions Recommender." },
+      { "num": 3, "title": "Opaque Product Value", "desc": "The Lifter's benefits are locked behind text blogs, making its capabilities abstract.", "impact": "Critical", "action": "Integrate interactive code archaeology translation playrooms." },
+      { "num": 4, "title": "Static ROI Proofs", "desc": "Case metrics are fixed text rows, preventing dynamic scale adjustments.", "impact": "Medium", "action": "Launch sliding ROI saving estimation panels." },
+      { "num": 5, "title": "Heavy Megamenu Navigation", "desc": "Information architecture forces clicking through nested lists.", "impact": "Medium", "action": "Integrate smart navigation or conversational filters." },
+      { "num": 6, "title": "Text-Heavy Content Blocks", "desc": "Dense paragraphs discourage scanning and lower session durations.", "impact": "Medium", "action": "Substitute with visual metrics dashboards." },
+      { "num": 7, "title": "No User Personalization", "desc": "Every visitor (BFSI director, Healthcare innovator, Gamer) sees the same generic hero layout.", "impact": "High", "action": "Implement dynamic layouts based on selector cards." }
+    ]
+  },
+  "opportunities": [
+    {
+      "id": "copilot",
+      "name": "AI Copilot Assistant",
+      "prob": "Standard static help portals require active searching.",
+      "bVal": "Qualify business leads automatically and match queries to specialized teams.",
+      "uVal": "Immediate answers to technical, modernization, or industry queries.",
+      "impact": "High Impact"
+    },
+    {
+      "id": "recommender",
+      "name": "Interactive Solution Recommender",
+      "prob": "Navigating massive service directories is confusing.",
+      "bVal": "Lower funnel drop-offs by mapping client profiles to specific case profiles.",
+      "uVal": "Tailored frameworks lists in two clicks.",
+      "impact": "High Impact"
+    },
+    {
+      "id": "playground",
+      "name": "The Lifter Demo Sandbox",
+      "prob": "Abstract value statement of legacy compiler is difficult to audit.",
+      "bVal": "Increases conversion rates by showcasing automated translation capability.",
+      "uVal": "Paste SAS or COBOL modules and see Python output in real-time.",
+      "impact": "Critical Impact"
+    },
+    {
+      "id": "roi",
+      "name": "Interactive ROI Dashboard",
+      "prob": "Generic savings percentages are unconvincing.",
+      "bVal": "Capture developer scale and lines of code data for sales prospecting.",
+      "uVal": "Estimate customized time and developer expense savings.",
+      "impact": "Medium Impact"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+<section class="slide-section">
+  <div class="slide-container">
+    <div class="slide-head">
+      <span class="slide-tag">SECTION 04: CONTENT SYSTEM</span>
+      <h2 class="slide-title gradient-text-orange">Content &amp; Information Architecture</h2>
+      <p class="slide-subtitle">Audit of textual density and user engagement indicators across key pages of the website.</p>
+    </div>
+    
+    <div class="content-matrix-grid">
+      <div class="content-table-wrapper">
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th>Audited Page Node</th>
+              <th>Node Type</th>
+              <th>Information Density</th>
+              <th>User Engagement</th>
+            </tr>
+          </thead>
+          <tbody id="content-table-body">
+            <!-- Dynamically loaded from analysis-data.json -->
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="content-density-chart" style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div class="glass-panel" id="content-bar-chart" style="padding: 1.5rem; background: var(--bg-glass-heavy);">
+          <!-- Dynamically generated charts by chart.js -->
+        </div>
+        <div class="content-insights-card">
+          <!-- Dynamically loaded insights from analysis-data.json -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

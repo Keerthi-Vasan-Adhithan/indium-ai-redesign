@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indium Software | Digital Experience Assessment & Strategy Presentation</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/slides.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="presentation-theme">
+
+  <!-- Futuristic Particle Background Canvas -->
+  <canvas id="bg-particles" class="bg-canvas"></canvas>
+  <div class="tech-overlay"></div>
+  
+  <!-- Glowing Ambient System Orbs -->
+  <div class="radial-glow-system">
+    <div class="glow-orb orb-orange"></div>
+    <div class="glow-orb orb-indigo"></div>
+    <div class="glow-orb orb-cyan"></div>
+  </div>
+
+  <!-- Header Navigation HUD -->
+  <header class="hud-header">
+    <div class="header-branding">
+      <a href="../" class="brand-logo-wrap">
+        <div class="brand-dot"></div>
+        <span class="brand-text">indium<span class="brand-ext">.ai</span></span>
+      </a>
+      <span class="hud-separator">|</span>
+      <span class="hud-doc-title">Executive UX &amp; AI Maturity Assessment</span>
+    </div>
+    
+    <div class="header-actions">
+      <button class="btn-presenter" id="btn-toggle-presenter" title="Toggle Presentation Mode (Arrow keys active)">
+        <svg class="presenter-icon" viewBox="0 0 24 24">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        <span>Presenter HUD</span>
+      </button>
+      <a href="../existing-redesign/" class="btn-goto-redesign">
+        <span>Launch Prototype</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Side Navigation HUD Dots -->
+  <nav class="hud-dots" id="slide-nav-dots">
+    <!-- Rendered dynamically by main.js -->
+  </nav>
+
+  <!-- Interactive Slide Sections Injection Containers -->
+  <main class="slides-container" id="presentation-viewport">
+    <div id="hero-slide"></div>
+    <div id="company-slide"></div>
+    <div id="homepage-slide"></div>
+    <div id="ux-slide"></div>
+    <div id="content-slide"></div>
+    <div id="ai-maturity-slide"></div>
+    <div id="competitors-slide"></div>
+    <div id="gap-slide"></div>
+    <div id="opportunities-slide"></div>
+    <div id="proposed-slide"></div>
+    <div id="summary-slide"></div>
+  </main>
+
+  <!-- Bottom Navigation HUD controls -->
+  <footer class="hud-footer">
+    <div class="footer-progress">
+      <span class="slide-indicator"><strong id="current-slide-num">01</strong> / <span id="total-slide-num">11</span></span>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="slide-progress-fill"></div>
+      </div>
+    </div>
+    
+    <div class="footer-controls">
+      <button class="nav-control-btn btn-prev" id="btn-prev-slide" disabled>
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <span class="slide-section-label" id="current-section-label">Executive Assessment Portal</span>
+      <button class="nav-control-btn btn-next" id="btn-next-slide">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Presenter Mode Toast Info -->
+  <div class="presenter-toast" id="presenter-hud-toast">
+    <div class="toast-indicator"></div>
+    <p>Presenter HUD Active: Use Left/Right arrows, Up/Down, or Spacebar to navigate. Click HUD button to exit.</p>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/presentation.js"></script>
+</body>
+</html>

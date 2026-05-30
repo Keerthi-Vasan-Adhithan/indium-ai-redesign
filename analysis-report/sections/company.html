@@ -1,0 +1,42 @@
+<section class="slide-section">
+  <div class="slide-container">
+    <div class="slide-head">
+      <span class="slide-tag">SECTION 01: POSITIONING</span>
+      <h2 class="slide-title gradient-text-indigo">Company Positioning &amp; Core Offerings</h2>
+      <p class="slide-subtitle">Audit of Indium Software's engineering services, industry verticals, and proprietary platform differentiators.</p>
+    </div>
+    
+    <div class="company-grid" style="display: flex; flex-direction: column; gap: 2.5rem;">
+      <div>
+        <h3 style="font-family: var(--font-display); font-size: 1rem; margin-bottom: 1rem; color: var(--accent-orange); letter-spacing: 1.5px; text-transform: uppercase;">Core Engineering Verticals</h3>
+        <div class="company-sub-grid" id="company-services-grid">
+          <!-- Dynamically loaded from analysis-data.json -->
+        </div>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem;" class="company-split-grid">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1rem; margin-bottom: 1rem; color: var(--accent-cyan); letter-spacing: 1.5px; text-transform: uppercase;">Proprietary Digital Differentiators</h3>
+          <div class="company-sub-grid" id="company-differentiators-grid" style="grid-template-columns: 1fr;">
+            <!-- Dynamically loaded from analysis-data.json -->
+          </div>
+        </div>
+        
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1rem; margin-bottom: 1rem; color: var(--accent-purple); letter-spacing: 1.5px; text-transform: uppercase;">Key Industries Audited</h3>
+          <div class="company-sub-grid" id="company-industries-grid" style="grid-template-columns: 1fr;">
+            <!-- Dynamically loaded from analysis-data.json -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@media (max-width: 1024px) {
+  .company-split-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>

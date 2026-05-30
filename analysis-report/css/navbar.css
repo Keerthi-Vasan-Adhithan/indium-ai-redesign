@@ -1,0 +1,312 @@
+/* ── NAVIGATION AND PRESENTER PANEL HUD ── */
+
+/* Sticky Header HUD */
+.hud-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  background: rgba(6, 10, 19, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-glass);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  transition: var(--transition-smooth);
+}
+
+.header-branding {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hud-separator {
+  color: rgba(255, 255, 255, 0.15);
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+
+.hud-doc-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Premium HUD Buttons */
+.btn-presenter, .btn-goto-redesign {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-decoration: none;
+  border: 1px solid transparent;
+  gap: 8px;
+}
+
+.btn-presenter {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-primary);
+  border-color: var(--border-glass-bright);
+}
+
+.btn-presenter:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-orange);
+}
+
+.btn-presenter.active {
+  background: rgba(249, 115, 22, 0.08);
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+}
+
+.btn-goto-redesign {
+  background: linear-gradient(135deg, var(--accent-indigo) 0%, hsl(250, 89%, 55%) 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--accent-indigo-glow);
+}
+
+.btn-goto-redesign:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.presenter-icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  fill: none;
+}
+
+/* Sidebar navigation dots HUD */
+.hud-dots {
+  position: fixed;
+  right: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 99;
+}
+
+.hud-dot-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hud-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--text-muted);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.hud-dot:hover {
+  border-color: var(--accent-orange);
+  background: rgba(249, 115, 22, 0.15);
+  transform: scale(1.3);
+}
+
+.hud-dot-wrap.active .hud-dot {
+  border-color: var(--accent-orange);
+  background: var(--accent-orange);
+  box-shadow: 0 0 10px var(--accent-orange-glow);
+  transform: scale(1.3);
+}
+
+.hud-dot-label {
+  position: absolute;
+  right: 25px;
+  background: var(--bg-glass-heavy);
+  border: 1px solid var(--border-glass-bright);
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.hud-dot-wrap:hover .hud-dot-label {
+  opacity: 1;
+  right: 20px;
+}
+
+/* Bottom Progress HUD */
+.hud-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(6, 10, 19, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-glass);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+}
+
+.footer-progress {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-grow: 1;
+  max-width: 600px;
+}
+
+.slide-indicator {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.slide-indicator strong {
+  color: var(--accent-orange);
+}
+
+.progress-bar-track {
+  flex-grow: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  width: 9%; /* Initial value */
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-indigo), var(--accent-orange));
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+.footer-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.slide-section-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+}
+
+.nav-control-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass-bright);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.nav-control-btn:hover:not(:disabled) {
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+  background: rgba(249, 115, 22, 0.05);
+  transform: translateY(-1px);
+}
+
+.nav-control-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.nav-control-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Presenter Mode Toast Info */
+.presenter-toast {
+  position: fixed;
+  bottom: 95px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  background: var(--bg-glass-heavy);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-indigo);
+  border-radius: 30px;
+  padding: 0.75rem 1.8rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 101;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.presenter-toast.active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: all;
+}
+
+.toast-indicator {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+  animation: pulse-toast 1.5s infinite alternate;
+}
+
+@keyframes pulse-toast {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.presenter-toast p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}

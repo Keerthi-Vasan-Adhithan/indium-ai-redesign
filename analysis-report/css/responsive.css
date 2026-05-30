@@ -1,0 +1,164 @@
+/* ── PRESENTATION MEDIA QUERIES & RESPONSIVENESS ── */
+
+@media (max-width: 1200px) {
+  .slide-section {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  
+  .hud-header {
+    padding: 0 2.5rem;
+  }
+  
+  .hud-footer {
+    padding: 0 2.5rem;
+  }
+  
+  .hud-dots {
+    right: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .slide-section {
+    padding-top: 110px;
+    padding-bottom: 90px;
+  }
+  
+  .slide-title {
+    font-size: 2.1rem;
+  }
+  
+  /* Stack presentation layout grids */
+  .hero-slide-layout,
+  .homepage-split-grid,
+  .ux-flow-grid,
+  .content-matrix-grid,
+  .ai-maturity-layout,
+  .gap-matrix-grid,
+  .proposed-concepts-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .hero-slide-layout .hero-stats-grid {
+    order: 2;
+  }
+  
+  .hero-slide-layout .hero-slide-info {
+    order: 1;
+  }
+  
+  .ai-maturity-comparison {
+    order: 2;
+  }
+  
+  .ai-maturity-chart-pane {
+    order: 1;
+  }
+  
+  .proposed-preview-frame {
+    order: 1;
+  }
+  
+  .proposed-features-list {
+    order: 2;
+  }
+  
+  .summary-dashboard-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .executive-statement-card {
+    grid-column: span 1;
+  }
+  
+  /* Hide sidebar navigation dots to save screen space */
+  .hud-dots {
+    display: none;
+  }
+  
+  .hud-doc-title {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 100px;
+    padding-bottom: 95px;
+  }
+  
+  .hud-header {
+    padding: 0 1.5rem;
+    height: 75px;
+  }
+  
+  .hud-footer {
+    padding: 0 1.5rem;
+    height: 75px;
+  }
+  
+  .btn-presenter span {
+    display: none; /* Icon only on mobile */
+  }
+  
+  .slide-indicator {
+    font-size: 0.95rem;
+  }
+  
+  .slide-section-label {
+    display: none;
+  }
+  
+  .opportunities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .scorecard-bar-wrap {
+    width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-title {
+    font-size: 1.7rem;
+  }
+  
+  .hero-stats-grid,
+  .company-sub-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .scorecard-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1.2rem;
+  }
+  
+  .scorecard-bar-wrap {
+    width: 100%;
+  }
+  
+  .competitor-table th, 
+  .competitor-table td {
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .comp-score-bar-track {
+    display: none; /* Hide bars on small screens to fit text */
+  }
+  
+  .executive-statement-card {
+    padding: 1.5rem;
+  }
+  
+  .executive-statement-text {
+    font-size: 1rem;
+  }
+}
